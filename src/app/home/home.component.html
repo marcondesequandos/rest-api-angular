@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let country of countriesList$ | async">
+      <img src="{{ country.flag }}" alt="{{ country.name }}">
+      {{ country.name }}
+    </div>
+  </div>
+</div>
