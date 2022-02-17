@@ -13,11 +13,8 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
-
-
   public getCountries() {
     return this.http.get<CountryListItem[]>(this.api);
-
   }
 
 

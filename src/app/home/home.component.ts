@@ -10,7 +10,7 @@ import { CountryListItem } from '../countries/country-list-item';
 })
 export class HomeComponent implements OnInit {
 
-  countriesList$: Observable<CountryListItem[]>
+  private countriesList: CountryListItem[]
 
   constructor(private countriesSvc: CountriesService) {}
 
@@ -18,10 +18,15 @@ export class HomeComponent implements OnInit {
     // this.countriesSvc.getCountries().subscribe(
     //   (res)=> { console.log(res) })
 
-    this.countriesList$ = this.countriesSvc.getCountries()
+    this.countriesSvc.getCountries().subscribe((countries)=>
+    this.countriesList = countries)
 
-    console.log(this.countriesList$)
+    console.log(this.countriesList)
 
+  }
+
+  get countries() {
+    return this.countriesList;
   }
 
 }

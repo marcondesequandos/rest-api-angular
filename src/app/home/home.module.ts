@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CountriesService } from '../countries/countries.service';
+import { CountryCardComponent } from '../components/country-card/country-card.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CountryCardComponent
   ],
   imports: [
     CommonModule,
