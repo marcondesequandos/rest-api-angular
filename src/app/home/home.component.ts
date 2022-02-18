@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { CountriesService } from '../countries/countries.service';
 import { CountryListItem } from '../countries/country-list-item';
+
+const REGIONS = ['', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-  private countriesList: CountryListItem[]
+  private countriesList: CountryListItem[];
+  searchFilter?: string;
+  regionFilter?: string;
+  regionOptions = REGIONS;
 
   constructor(private countriesSvc: CountriesService) {}
 
@@ -18,15 +21,31 @@ export class HomeComponent implements OnInit {
     // this.countriesSvc.getCountries().subscribe(
     //   (res)=> { console.log(res) })
 
-    this.countriesSvc.getCountries().subscribe((countries)=>
-    this.countriesList = countries)
+    this.countriesSvc
+      .getCountries()
+      .subscribe((countries) => (this.countriesList = countries));
 
-    console.log(this.countriesList)
 
   }
 
   get countries() {
-    return this.countriesList;
-  }
+    console.log(this.searchFilter);
+    console.log(this.regionFilter);
+    console.log(this.countriesList[0].name)
+    return this.countriesList
+      ? this.countriesList
+          .filter((country) =>
+            this.searchFilter
+              ? country.name.includes(this.searchFilter.toLowerCase())
+              : country
+          )
+          .filter((country) =>
+            this.regionFilter
+              ? country.region.includes(this.regionFilter)
+              : country
+          )
+      : this.countriesList;
 
+
+  }
 }
