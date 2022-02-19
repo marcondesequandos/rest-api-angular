@@ -24,19 +24,17 @@ export class HomeComponent implements OnInit {
     this.countriesSvc
       .getCountries()
       .subscribe((countries) => (this.countriesList = countries));
-
-
   }
 
   get countries() {
     console.log(this.searchFilter);
     console.log(this.regionFilter);
-    console.log(this.countriesList[0].name)
+    console.log(this.countriesList[0].name);
     return this.countriesList
       ? this.countriesList
           .filter((country) =>
             this.searchFilter
-              ? country.name.includes(this.searchFilter.toLowerCase())
+              ? country.name.toLowerCase().includes(this.searchFilter.toLowerCase())
               : country
           )
           .filter((country) =>
@@ -45,7 +43,5 @@ export class HomeComponent implements OnInit {
               : country
           )
       : this.countriesList;
-
-
   }
 }
