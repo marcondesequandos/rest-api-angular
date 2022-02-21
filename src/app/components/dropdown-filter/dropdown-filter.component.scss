@@ -1,8 +1,10 @@
 .drop-down {
   position: relative;
+  cursor: pointer;
+  width: 100%;
   border-radius: 0.25rem;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 0rem 1rem 1rem;
   font-size: 1rem;
   @media (min-width: 376px) {
     margin-top: 0;
@@ -10,20 +12,24 @@
 
   &-label {
     display: flex;
+    width: 140px;
     justify-content: space-between;
   }
 
   &-options {
     border-radius: 0.25rem;
     position: absolute;
+    background-color: #fff;
     top: 110%;
+    left: 0%;
     z-index: 10;
-    width: 100%;
+    width: 92%;
     list-style: none;
-    padding-left: 1rem;
+    padding: 1rem 0 1rem 1rem;
   }
 
+
   li {
-    padding: 0.5rem;
+    padding: 0.2rem;
   }
 }

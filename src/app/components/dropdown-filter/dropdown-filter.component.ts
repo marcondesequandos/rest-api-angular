@@ -17,6 +17,8 @@ export class DropdownFilterComponent {
 
   select(value: string) {
     this.valueChange.emit(value);
+    this.toggleShowOptions();
+    this.placeholder = value === 'None' ? 'Filter by Region' : value;
   }
 
   toggleShowOptions() {
