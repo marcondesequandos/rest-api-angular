@@ -3,6 +3,8 @@
   border-radius: 10px;
   font-size: 15px;
   width: 275px;
+  margin-bottom: 30px;
+
 
   h2 {
     font-size: 18px;
@@ -32,6 +34,10 @@
 
   li {
     padding-bottom: 0.25rem;
+  }
+
+  @media (max-width: 769px) {
+    margin: 30px;
   }
 
 }

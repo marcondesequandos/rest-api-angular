@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { registerLocaleData } from '@angular/common';
 import { DropdownFilterComponent } from './components/dropdown-filter/dropdown-filter.component';
+import { HeaderComponent } from './components/header/header.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

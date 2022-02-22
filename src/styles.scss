@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 :root {
+  height: inherit;
   --white: hsl(0, 0%, 100%);
 
   --d-bg: hsl(207, 26%, 17%);
@@ -17,6 +18,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
