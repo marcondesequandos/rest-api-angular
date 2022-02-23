@@ -24,12 +24,11 @@ export class HomeComponent implements OnInit {
     this.countriesSvc
       .getCountries()
       .subscribe((countries) => (this.countriesList = countries));
+
+
   }
 
   get countries() {
-    console.log(this.searchFilter);
-    console.log(this.regionFilter);
-    console.log(this.countriesList[0].name);
     return this.countriesList
       ? this.countriesList
           .filter((country) =>

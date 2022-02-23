@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m)=> m.HomeModule) //lazyloading será acessado de acordo com a requisição da rota carregando dinamicamente, função import retorna promise por isso o then
+  },
+  {
+    path: 'country/:name',
+    loadChildren: () => import('./country-details-page/country-details-page.module').then((m)=> m.CountryDetailsPageModule)
   }
 ];
 
