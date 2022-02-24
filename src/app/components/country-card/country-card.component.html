@@ -2,6 +2,7 @@
   *ngIf="country"
   [routerLink]="'/country/' + country.name.toLowerCase()"
   class="country-card shadow"
+  title="{{ country.name }}"
 >
   <div class="country-card-img shadow-down">
     <img [src]="country.flag" />

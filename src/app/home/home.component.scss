@@ -64,12 +64,12 @@ ul {
     justify-content: space-between;
   }
 
-  app-dropdown {
-    width: 60%;
-    @media (min-width: 376px) {
-      width: 25%;
-    }
-  }
+  // app-dropdown {
+  //   width: 60%;
+  //   @media (min-width: 376px) {
+  //     width: 25%;
+  //   }
+  // }
 
   .search-bar {
     border-radius: 0.25rem;

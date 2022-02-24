@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { mergeMap, Observable, of, tap } from 'rxjs';
 import { CountriesService } from '../countries/countries.service';
-import { CountryDetail } from '../countries/country-detail';
+import { CountryDetail, Currency, Language } from '../countries/country-detail';
 
 @Component({
   selector: 'app-country-details-page',
@@ -34,7 +34,12 @@ export class CountryDetailsPageComponent implements OnInit {
         })
       );
     });
+  }
 
-    console.log(this.country$);
+  getCurrencies(currencies: Currency[]) {
+    return currencies.map((currency)=> currency.name).join(', ')
+  }
+  getLanguages(languages: Language[]) {
+    return languages.map((language)=> language.name).join(', ')
   }
 }
