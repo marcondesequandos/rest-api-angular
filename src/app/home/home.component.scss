@@ -91,6 +91,24 @@ ul {
     }
   }
 
+  :host-context(.light) {
+    .search-filter {
+      background-color: var(--l-element);
+      color: var(--l-input);
+      input::placeholder {
+        color: var(--l-input);
+      }
+    }
+  }
 
+  :host-context(.dark) {
+    .search-filter {
+      background-color: var(--d-element);
+      color: var(--d-text);
+      input::placeholder {
+        color: var(--d-text);
+      }
+    }
 
+  }
 }

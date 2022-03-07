@@ -44,7 +44,7 @@
       img {
         width: 40%;
         height: 50%;
-        aspect-ratio: 16/12;
+        aspect-ratio: 16/9;
       }
     }
   }
@@ -111,6 +111,17 @@
         width: auto;
       }
     }
+  }
+
+
+  :host-context(.dark) .button {
+    background-color: var(--d-element);
+    color: var(--d-text);
+  }
+
+  :host-context(.light) .button {
+    background-color: var(--l-element);
+    color: var(--l-text);
   }
 
 }

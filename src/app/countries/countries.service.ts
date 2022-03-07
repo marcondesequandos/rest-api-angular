@@ -31,8 +31,6 @@ export class CountriesService {
   }
 
   public getCountriesByCodes(codes: string[]) {
-    console.log(`${this.alphaCode}${codes.join(',')}${this.detailFields}`);
-
     return this.http.get<CountryDetail[]>(
       `${this.alphaCode}${codes.join(',')}${this.detailFields}`
     );
