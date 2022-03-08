@@ -24,6 +24,5 @@ export class ThemeService {
     } else {
       this.mode.next(Theme.light)
     }
-    console.log(this.mode)
   }
 }

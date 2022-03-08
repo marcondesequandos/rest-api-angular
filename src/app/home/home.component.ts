@@ -18,14 +18,9 @@ export class HomeComponent implements OnInit {
   constructor(private countriesSvc: CountriesService) {}
 
   ngOnInit(): void {
-    // this.countriesSvc.getCountries().subscribe(
-    //   (res)=> { console.log(res) })
-
     this.countriesSvc
       .getCountries()
       .subscribe((countries) => (this.countriesList = countries));
-
-
   }
 
   get countries() {

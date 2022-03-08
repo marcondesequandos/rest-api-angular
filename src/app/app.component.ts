@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Theme, ThemeService } from './theme/theme.service';
-import { Observable } from 'rxjs';
+import {  ThemeService } from './theme/theme.service';
 
 
-const API = 'https://restcountries.com/v2/all?fields=name,capital,region,population,flag'
 
 @Component({
   selector: 'app-root',
@@ -18,10 +16,9 @@ export class AppComponent implements OnInit {
   constructor (private themeService: ThemeService) {}
 
    ngOnInit(): void {
-     const value = this.themeService.mode$.subscribe(
+     this.themeService.mode$.subscribe(
        (res)=> this.theme = res
      );
-     console.log(this.theme)
    }
 
 
