@@ -92,6 +92,10 @@ ul {
       input::placeholder {
         color: var(--d-text);
       }
+
+      input:focus {
+        color: var(--d-text);
+      }
     }
 
   }
